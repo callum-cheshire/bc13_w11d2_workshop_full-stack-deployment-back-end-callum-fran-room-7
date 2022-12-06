@@ -6,6 +6,8 @@ export async function getShoppingList() {
   return data.rows;
 }
 
+// Uncommented ^
+
 export async function postListItem(listItem) {
   const { item, completed } = listItem;
   const data = await pool.query(
