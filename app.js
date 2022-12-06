@@ -1,6 +1,7 @@
 import express from "express";
 import logger from "morgan";
 import cors from "cors";
+const PORT = process.env.port || 3000;
 
 import shoppingListRouter from "./routes/shoppingList.js";
 
@@ -12,5 +13,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/items", shoppingListRouter);
+
+app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`)
+})
 
 export default app;
