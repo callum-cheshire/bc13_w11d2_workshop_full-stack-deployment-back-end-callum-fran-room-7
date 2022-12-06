@@ -10,7 +10,7 @@ export async function postListItem(listItem) {
   const { item, completed } = listItem;
   const data = await pool.query(
     `INSERT INTO shopping (
-      item,
+      items,
       completed
     ) VALUES ($1,$2) RETURNING *;`,
     [item, completed]
